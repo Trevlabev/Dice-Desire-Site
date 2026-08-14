@@ -1,338 +1,361 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dice & Desire — Role Play After Dark</title>
-  <meta name="description" content="Dice & Desire is a creator-led adult fantasy actual-play project built around a real tabletop campaign, cast chemistry, and individual boundaries." />
-  <meta name="theme-color" content="#170b15" />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Dice & Desire — Role Play After Dark" />
-  <meta property="og:description" content="A real fantasy campaign. A dangerous mood. A cast worth following." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/dice-desire-banner-light.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="description" content="Dice & Desire is a creator-led adult fantasy actual-play project built around real tabletop storytelling, ensemble chemistry, and individual boundaries.">
+  <meta name="theme-color" content="#160a13">
+  <meta property="og:title" content="Dice & Desire — Role Play After Dark">
+  <meta property="og:description" content="Real game. Real chemistry. Individual boundaries. Adult possibilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/logo-banner-light.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
   <style>
     :root{
-      --ink:#24121e;
-      --night:#110810;
-      --night-2:#1b0b18;
-      --night-3:#2a1022;
-      --plum:#4f1736;
-      --wine:#7c274e;
-      --ruby:#9b2545;
-      --rose:#d58e9e;
-      --rose-2:#efc0c8;
-      --cream:#fff9f4;
-      --paper:#f6eee9;
-      --paper-2:#efe1dd;
-      --gold:#d7a457;
-      --gold-2:#f0d39a;
-      --muted:#7a6871;
-      --line:rgba(80,23,54,.14);
-      --line-dark:rgba(255,255,255,.13);
-      --shadow:0 30px 80px rgba(33,8,26,.18);
+      --night:#130910;
+      --night2:#20101b;
+      --plum:#4c1737;
+      --wine:#7b2b52;
+      --rose:#d78fa0;
+      --rose2:#f0c3ca;
+      --gold:#d7a45b;
+      --gold2:#f1d7a4;
+      --ivory:#fbf6f1;
+      --paper:#f5ece8;
+      --ink:#2a1622;
+      --muted:#806d76;
+      --line:rgba(76,23,55,.14);
       --max:1180px;
-      --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+      --serif:Georgia,"Times New Roman",serif;
       --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--night)}
-    body{margin:0;color:var(--ink);background:var(--cream);font-family:var(--sans);line-height:1.55;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.033;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
-    img,video,svg{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
+    body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.55;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+    img,video{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
     button{font:inherit}
-    ::selection{background:var(--rose);color:var(--night)}
-
-    .shell{width:min(var(--max),calc(100% - 40px));margin:0 auto}
-    .eyebrow{font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--wine)}
-    .dark .eyebrow{color:var(--gold-2)}
-    .display{font:600 clamp(46px,6.4vw,82px)/.98 var(--serif);letter-spacing:-.045em;margin:0}
+    .shell{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .eyebrow{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--wine)}
+    .display{font:600 clamp(40px,5vw,70px)/1.02 var(--serif);letter-spacing:-.04em;margin:0}
     .display em{font-weight:400;color:var(--wine)}
-    .dark .display em{color:var(--rose-2)}
-    .lede{font-size:18px;color:var(--muted);max-width:680px}
-    .dark .lede{color:#cdbdc5}
-    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 11px;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
-    .pill.dark{background:#2b1325;color:#f1c5d0;border:1px solid rgba(239,192,200,.18)}
-    .pill.light{background:#f1dfdf;color:#6d2b49;border:1px solid rgba(109,43,73,.08)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 19px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.04em;transition:.18s ease;border:1px solid transparent}
-    .btn:hover{transform:translateY(-2px)}
-    .btn.primary{color:#24101e;background:linear-gradient(135deg,var(--rose-2),var(--gold-2));box-shadow:0 14px 34px rgba(213,142,158,.2)}
-    .btn.ghost{color:#fff;border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.035)}
-    .btn.ink{color:#fff;background:var(--ink)}
+    .lede{font-size:17px;color:var(--muted);max-width:680px;margin:18px 0 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:0 18px;border-radius:999px;font-size:12px;font-weight:850;letter-spacing:.02em;border:1px solid transparent;transition:.18s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--rose2),var(--gold2));color:#2c1421;box-shadow:0 14px 36px rgba(215,143,160,.2)}
+    .btn.outline{border-color:rgba(255,255,255,.22);color:white;background:rgba(255,255,255,.04)}
+    .pill{display:inline-flex;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:#dbc8d1;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.035)}
+    section{scroll-margin-top:80px}
 
-    /* Header */
-    .nav-wrap{position:fixed;top:14px;left:0;right:0;z-index:100;padding:0 16px}
-    .nav{width:min(var(--max),100%);margin:auto;height:64px;padding:8px 14px 8px 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(20,8,18,.76);backdrop-filter:blur(18px);box-shadow:0 16px 45px rgba(0,0,0,.18)}
-    .nav-brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .nav-brand img{height:39px;width:auto;object-fit:contain}
-    .nav-links{display:flex;align-items:center;gap:24px;color:#d9c9d0;font-size:12px;font-weight:750}
+    /* NAV */
+    .nav-wrap{position:fixed;z-index:100;top:0;left:0;right:0;background:linear-gradient(to bottom,rgba(18,8,16,.92),rgba(18,8,16,.7),transparent);padding:14px 18px 26px}
+    .nav{width:min(var(--max),100%);height:58px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand-mini{display:flex;align-items:center;gap:11px;color:#fff}
+    .brand-mini img{width:38px;height:38px;object-fit:contain}
+    .brand-mini span{font:600 16px/1 var(--serif);letter-spacing:.02em}
+    .nav-links{display:flex;align-items:center;gap:28px;color:#cbb9c2;font-size:12px;font-weight:750}
     .nav-links a:hover{color:#fff}
-    .nav-status{white-space:nowrap;color:#efbeca;border:1px solid rgba(239,190,202,.28);border-radius:999px;padding:8px 10px;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .nav-right{display:flex;align-items:center;gap:10px}
+    .status{font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:#eebdca;border:1px solid rgba(238,189,202,.22);border-radius:999px;padding:7px 10px}
 
-    /* Hero */
-    .hero{position:relative;min-height:100svh;display:grid;align-items:center;overflow:hidden;padding:120px 0 72px;color:#fff;background:
-      radial-gradient(circle at 74% 20%,rgba(209,86,130,.20),transparent 30%),
-      radial-gradient(circle at 18% 86%,rgba(215,164,87,.10),transparent 28%),
-      linear-gradient(135deg,#0f070e 0%,#1d0a18 48%,#351027 100%)}
-    .hero::before{content:"";position:absolute;inset:0;opacity:.3;background-image:
-      linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 78%)}
-    .hero::after{content:"";position:absolute;width:640px;height:640px;border:1px solid rgba(240,211,154,.08);border-radius:50%;right:-260px;top:45%;transform:translateY(-50%);box-shadow:0 0 0 70px rgba(240,211,154,.015),0 0 0 140px rgba(240,211,154,.01)}
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.88fr 1.12fr;gap:60px;align-items:center}
-    .hero-logo{width:min(560px,100%);height:auto;filter:drop-shadow(0 18px 34px rgba(0,0,0,.22));margin-bottom:26px}
-    .hero-kicker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-    .hero-copy h1{font:600 clamp(38px,4.8vw,66px)/1.02 var(--serif);letter-spacing:-.04em;margin:0;max-width:650px}
-    .hero-copy h1 em{font-weight:400;color:var(--rose-2)}
-    .hero-copy p{max-width:625px;color:#cebcc5;font-size:18px;margin:23px 0 0}
-    .hero-doctrine{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 22px;border-left:2px solid var(--rose);padding-left:16px;margin-top:28px;color:#a9909d;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    /* HERO */
+    .hero{min-height:760px;position:relative;display:flex;align-items:center;color:#fff;padding:118px 0 76px;overflow:hidden;background:
+      radial-gradient(circle at 72% 24%,rgba(145,45,91,.24),transparent 26%),
+      radial-gradient(circle at 12% 85%,rgba(215,164,91,.09),transparent 28%),
+      linear-gradient(120deg,#10070e 0%,#1c0c18 50%,#311126 100%)}
+    .hero:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(rgba(255,255,255,.017) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.017) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    .hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(241,215,164,.10);border-radius:50%;right:-220px;top:90px;box-shadow:0 0 0 64px rgba(241,215,164,.018),0 0 0 128px rgba(241,215,164,.01)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+    .hero-copy{max-width:570px}
+    .hero-logo{width:min(510px,100%);margin-bottom:24px;filter:drop-shadow(0 16px 35px rgba(0,0,0,.26))}
+    .hero-copy h1{font:600 clamp(42px,4.7vw,68px)/1.01 var(--serif);letter-spacing:-.045em;margin:0}
+    .hero-copy h1 em{font-weight:400;color:var(--rose2)}
+    .hero-copy p{font-size:17px;color:#cebcc4;margin:21px 0 0;max-width:560px}
+    .doctrine{display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:26px;color:#bfaab5;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .doctrine span:before{content:"◆";color:var(--gold);font-size:7px;margin-right:7px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
 
-    .hero-media{position:relative;min-height:620px}
-    .hero-card{position:absolute;inset:15px 0 0 32px;border-radius:32px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 38px 90px rgba(0,0,0,.42);background:#1c0c18}
-    .hero-card img{width:100%;height:100%;object-fit:cover;object-position:45% center;filter:saturate(.92) contrast(1.02)}
-    .hero-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,6,13,.8),transparent 46%),linear-gradient(90deg,rgba(15,6,13,.22),transparent 35%)}
-    .hero-card-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:26px}
-    .hero-card-copy small{display:block;color:#e8c990;font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;margin-bottom:7px}
-    .hero-card-copy b{font:600 26px var(--serif);color:#fff}
-    .hero-icon{position:absolute;left:-18px;top:4px;z-index:4;width:138px;height:138px;padding:10px;border-radius:28px;background:rgba(255,248,242,.94);box-shadow:0 18px 48px rgba(0,0,0,.28);transform:rotate(-3deg)}
-    .hero-icon img{width:100%;height:100%;object-fit:contain}
-    .hero-note{position:absolute;right:-10px;top:92px;z-index:4;width:194px;padding:15px 16px;border-radius:16px;background:#fff8f2;color:#4b2639;box-shadow:0 20px 55px rgba(0,0,0,.27);transform:rotate(3deg)}
-    .hero-note small{display:block;color:#a46c84;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero-note b{display:block;font:600 19px var(--serif);margin-top:4px}.hero-note span{display:block;color:#7c6571;font-size:11px;margin-top:5px}
+    .video-card{position:relative;border-radius:26px;padding:1px;background:linear-gradient(135deg,rgba(240,211,164,.6),rgba(215,143,160,.28),rgba(255,255,255,.08));box-shadow:0 38px 90px rgba(0,0,0,.34)}
+    .video-inner{overflow:hidden;border-radius:25px;background:#0b0509}
+    .video-inner video{width:100%;aspect-ratio:16/9;background:#0b0509}
+    .video-meta{display:flex;justify-content:space-between;gap:20px;padding:15px 17px 16px;color:#cdbac3;background:#170a14;border-top:1px solid rgba(255,255,255,.08);font-size:11px}
+    .video-meta b{color:#fff}
+    .video-badge{position:absolute;left:18px;top:18px;z-index:3;background:rgba(17,7,14,.74);border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(8px);color:#f1d7de;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
 
-    /* Logo ribbon */
-    .brand-ribbon{background:#fff8f3;padding:24px 0;border-bottom:1px solid var(--line)}
-    .brand-ribbon img{width:min(980px,90%);margin:auto;height:auto}
+    /* BRAND STRIP */
+    .brand-strip{background:#fff9f5;border-bottom:1px solid var(--line);padding:18px 0}
+    .brand-strip img{width:min(860px,88%);margin:auto;opacity:.96}
 
-    section{scroll-margin-top:90px}
-    .section{padding:105px 0}
-    .dark{color:#fff;background:var(--night)}
+    .section{padding:96px 0}
+    .intro{background:linear-gradient(180deg,#fffaf6,#f5ebe7)}
+    .section-head{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:end}
+    .section-head .lede{margin:0}
+    .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+    .principle{min-height:220px;padding:24px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.6);position:relative;overflow:hidden}
+    .principle:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-44px;bottom:-48px;background:radial-gradient(circle,rgba(215,143,160,.16),transparent 70%)}
+    .principle small{font-size:9px;font-weight:900;letter-spacing:.13em;color:var(--wine)}
+    .principle h3{font:600 25px/1.08 var(--serif);margin:48px 0 8px}
+    .principle p{margin:0;color:#806c76;font-size:13px}
 
-    /* Intro */
-    .intro{background:linear-gradient(180deg,#fff9f4 0%,#f6ece7 100%)}
-    .intro-head{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:end}
-    .intro-head .lede{margin:0}
-    .manifesto{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
-    .manifesto article{position:relative;min-height:265px;padding:22px;border-radius:25px;overflow:hidden;color:#fff;box-shadow:0 20px 55px rgba(55,22,43,.10)}
-    .manifesto article:nth-child(1){background:linear-gradient(145deg,#3c142e,#6e254f)}
-    .manifesto article:nth-child(2){background:linear-gradient(145deg,#6d284b,#a84d6d)}
-    .manifesto article:nth-child(3){background:linear-gradient(145deg,#35253d,#58405f)}
-    .manifesto article:nth-child(4){background:linear-gradient(145deg,#765031,#b47d4c)}
-    .manifesto article::after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(255,255,255,.14);border-radius:50%;right:-54px;bottom:-58px}
-    .manifesto small{font-size:9px;letter-spacing:.15em;font-weight:900;color:#f7d8df}.manifesto h3{font:600 25px var(--serif);margin:58px 0 8px}.manifesto p{font-size:13px;color:rgba(255,255,255,.76);margin:0;max-width:220px}
+    /* FORMAT */
+    .format{background:#170a14;color:white;position:relative;overflow:hidden}
+    .format:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 15%,rgba(215,143,160,.13),transparent 26%)}
+    .format .eyebrow{color:var(--gold2)}
+    .format .display em{color:var(--rose2)}
+    .format .lede{color:#c9b7c0}
+    .format-head{position:relative;z-index:2;display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:end}
+    .pipeline{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:48px}
+    .step{min-height:160px;border-radius:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.1)}
+    .step n{display:block;font-size:9px;font-weight:900;color:var(--gold2);letter-spacing:.12em}
+    .step b{display:block;font:600 21px var(--serif);margin-top:42px}
+    .step span{display:block;color:#ad98a4;font-size:11px;margin-top:6px}
+    .example{position:relative;z-index:2;margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+    .example div{padding:18px;background:#20101c;border-right:1px solid rgba(255,255,255,.08)}
+    .example div:last-child{border-right:0}
+    .example strong{display:block;font:600 28px var(--serif);color:#fff}
+    .example span{font-size:10px;color:#a994a0;text-transform:uppercase;letter-spacing:.08em}
+    .working-note{position:relative;z-index:2;margin-top:14px;color:#8f7c87;font-size:11px}
 
-    /* Trailer */
-    .watch{background:linear-gradient(180deg,#ead8df,#fff8f3);position:relative;overflow:hidden}
-    .watch::before{content:"";position:absolute;width:650px;height:650px;border-radius:50%;right:-280px;top:-250px;background:radial-gradient(circle,rgba(126,39,78,.18),rgba(126,39,78,0) 68%)}
-    .watch-grid{position:relative;z-index:2;display:grid;grid-template-columns:.72fr 1.28fr;gap:56px;align-items:center}
-    .watch-copy .lede{margin-top:22px}
-    .watch-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
-    .video-shell{padding:9px;border-radius:28px;background:linear-gradient(135deg,#76284e,#d991a5 52%,#d8aa62);box-shadow:0 30px 70px rgba(71,24,53,.23)}
-    .video-shell video{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:20px;background:#120811}
-    .video-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:13px;color:#755f69;font-size:11px}.video-foot b{color:#7a2f51;text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+    /* CAST / RECRUIT */
+    .join{background:#fbf5f0}
+    .join-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+    .crest-card{border-radius:28px;background:linear-gradient(145deg,#331126,#5d1d40);padding:34px;min-height:460px;display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 28px 60px rgba(67,20,49,.15)}
+    .crest-card:before,.crest-card:after{content:"";position:absolute;border:1px solid rgba(241,215,164,.16);border-radius:50%;width:330px;height:330px}
+    .crest-card:after{width:470px;height:470px;opacity:.5}
+    .crest-card img{width:min(310px,84%);position:relative;z-index:2;filter:drop-shadow(0 18px 35px rgba(0,0,0,.25))}
+    .join-copy .lede{margin-bottom:26px}
+    .what-matters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .matter{padding:15px 16px;border-radius:15px;background:white;border:1px solid var(--line)}
+    .matter b{display:block;font-size:12px}
+    .matter span{display:block;font-size:11px;color:#806d76;margin-top:3px}
+    .not-metrics{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+    .not-metrics span{padding:7px 9px;border-radius:999px;background:#eadbd8;color:#725662;font-size:9px;font-weight:850}
+    .join-flow{margin-top:26px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+    .join-flow div{border-top:2px solid #d79aaa;padding-top:9px}
+    .join-flow small{display:block;color:#a75370;font-size:8px;font-weight:900;letter-spacing:.1em}
+    .join-flow b{display:block;font-size:10px;margin-top:3px}
 
-    /* Mood split */
-    .mood{background:#160914;color:#fff;padding:0}
-    .mood-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:720px}
-    .mood-image{position:relative;overflow:hidden}.mood-image img{width:100%;height:100%;object-fit:cover}.mood-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 58%,#160914 100%),linear-gradient(to top,rgba(18,5,15,.5),transparent 45%)}
-    .mood-copy{display:flex;flex-direction:column;justify-content:center;padding:90px max(40px,calc((100vw - var(--max))/2)) 90px 68px;background:radial-gradient(circle at 0 20%,rgba(152,38,78,.14),transparent 35%)}
-    .mood-copy h2{font:600 clamp(48px,6vw,78px)/.98 var(--serif);letter-spacing:-.05em;margin:17px 0 20px;max-width:570px}.mood-copy h2 em{font-weight:400;color:var(--rose-2)}.mood-copy p{color:#cbb8c1;font-size:17px;max-width:560px}.mood-quote{margin-top:28px;border-left:2px solid var(--gold);padding-left:17px;color:#e7cfda;font:italic 18px var(--serif)}
-
-    /* Format */
-    .format{background:#fff9f4}
-    .format-head{display:grid;grid-template-columns:1fr .75fr;gap:70px;align-items:end}
-    .format-head .lede{margin:0}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
-    .stat{border:1px solid var(--line);border-radius:24px;padding:23px;background:#fff;box-shadow:0 15px 35px rgba(65,28,49,.045)}
-    .stat strong{display:block;font:600 clamp(34px,4vw,52px) var(--serif);color:var(--wine)}.stat small{display:block;color:#9a7d8b;font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-top:2px}.stat p{font-size:13px;color:#7a6871;margin:13px 0 0}
-    .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:34px;align-items:stretch}
-    .pipe{position:relative;min-height:118px;border-radius:18px;background:#2a1022;color:#fff;padding:17px;display:flex;flex-direction:column;justify-content:flex-end}.pipe:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:3;color:#a95f7b;font-size:18px}.pipe small{font-size:8px;font-weight:900;letter-spacing:.15em;color:#dcb5c3}.pipe b{font:600 18px var(--serif);margin-top:5px}.working-note{margin-top:16px;color:#8b747e;font-size:11px;font-style:italic}
-
-    /* Principles */
-    .principles{background:linear-gradient(180deg,#2a1022 0%,#130811 100%);color:#fff}
-    .principles-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
-    .principles-copy{position:sticky;top:115px}.principles-copy .lede{margin-top:22px}
-    .principle-list{display:grid;gap:13px}
-    .principle{display:grid;grid-template-columns:52px 1fr;gap:17px;align-items:start;padding:22px;border:1px solid rgba(255,255,255,.11);border-radius:22px;background:rgba(255,255,255,.035)}
-    .principle-icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(213,142,158,.11);color:#f0c5d0;font:600 22px var(--serif)}
-    .principle b{display:block;font:600 21px var(--serif);margin-bottom:5px}.principle span{font-size:13px;color:#bfaeb7}
-
-    /* Join */
-    .join{background:#fff8f3}
-    .join-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:stretch}
-    .join-visual{position:relative;min-height:620px;border-radius:30px;overflow:hidden;box-shadow:var(--shadow)}
-    .join-visual img{width:100%;height:100%;object-fit:cover}.join-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,6,14,.76),transparent 55%)}
-    .join-visual .overlay{position:absolute;z-index:2;left:26px;right:26px;bottom:25px;color:#fff}.join-visual .overlay small{font-size:9px;font-weight:900;letter-spacing:.14em;color:#f1d3a0}.join-visual .overlay b{display:block;font:600 28px var(--serif);margin-top:5px}
-    .join-copy{padding:14px 0}.join-copy .lede{margin-top:20px}
-    .criteria{display:grid;gap:9px;margin-top:28px}
-    .criterion{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--line)}
-    .criterion i{width:30px;height:30px;border-radius:9px;background:#f0dddd;color:#812b50;display:grid;place-items:center;font-style:normal;font-weight:900}.criterion b{display:block;font-size:13px}.criterion span{display:block;font-size:12px;color:#7c6972;margin-top:2px}
-    .not-score{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.not-score span{padding:8px 10px;border-radius:999px;background:#f0e1df;color:#795d68;font-size:9px;font-weight:900;letter-spacing:.06em}
-    .join-process{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:28px}.join-process div{border-top:2px solid #d9a0ae;padding-top:9px}.join-process span{display:block;color:#9d4667;font-size:9px;font-weight:900}.join-process b{display:block;font-size:11px;margin-top:2px}
-
-    /* Support */
-    .support{background:linear-gradient(135deg,#6e264c 0%,#9c4869 48%,#b67277 100%);color:#fff;position:relative;overflow:hidden}
-    .support::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-230px;bottom:-310px;border:1px solid rgba(255,255,255,.15);box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 140px rgba(255,255,255,.018)}
-    .support .eyebrow{color:#ffe1bc}.support-head{display:grid;grid-template-columns:1fr .9fr;gap:60px;align-items:end;position:relative;z-index:2}.support-head p{color:#f1dce3;margin:0;font-size:16px}
-    .goals{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:42px}.goal{min-height:180px;border-radius:22px;padding:20px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(5px)}.goal small{font-size:8px;font-weight:900;letter-spacing:.14em;color:#ffe3b7}.goal b{display:block;font:600 21px var(--serif);margin-top:35px}.support-rule{position:relative;z-index:2;margin:25px 0 0;padding-left:14px;border-left:2px solid #f3d099;color:#f7e7ed;font-size:12px}
+    /* SUPPORT */
+    .support{background:linear-gradient(135deg,#6b2449,#9b4968 55%,#b5757b);color:#fff;position:relative;overflow:hidden}
+    .support:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.14);border-radius:50%;right:-260px;bottom:-320px;box-shadow:0 0 0 68px rgba(255,255,255,.025),0 0 0 136px rgba(255,255,255,.016)}
+    .support .eyebrow{color:#ffe2bd}
+    .support-head{position:relative;z-index:2;display:grid;grid-template-columns:1fr .9fr;gap:70px;align-items:end}
+    .support-head p{margin:0;color:#f2dce3}
+    .goals{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+    .goal{min-height:175px;border-radius:19px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.1);padding:19px;backdrop-filter:blur(4px)}
+    .goal small{font-size:8px;font-weight:900;letter-spacing:.12em;color:#ffe2b9}
+    .goal b{display:block;font:600 20px var(--serif);margin-top:38px}
+    .support-note{position:relative;z-index:2;margin-top:22px;padding-left:14px;border-left:2px solid #f2cf95;font-size:11px;color:#f4e4ea;max-width:760px}
 
     /* FAQ */
-    .faq{background:#f6ece7}
-    .faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:65px;align-items:start}
-    .faq-side{position:sticky;top:118px}.faq-side p{color:#816b75;font-size:14px}.faq-mark{width:155px;margin:25px 0 0}
-    details{border-top:1px solid rgba(78,23,54,.16);padding:18px 0}details:last-child{border-bottom:1px solid rgba(78,23,54,.16)}summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;font:600 19px var(--serif)}summary::-webkit-details-marker{display:none}summary::after{content:"+";font:400 25px var(--serif);color:#a44c6a}details[open] summary::after{content:"–"}details p{color:#75636c;font-size:13px;max-width:720px;margin:10px 40px 0 0}
+    .faq{background:#f4eae6}
+    .faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:68px}
+    .faq-brand{position:sticky;top:110px}
+    .faq-brand img{width:155px;margin-top:24px}
+    details{border-top:1px solid var(--line);padding:17px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font:600 18px var(--serif)}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:24px;color:#a14d6a}
+    details[open] summary:after{content:"–"}
+    details p{margin:9px 38px 0 0;color:#75616c;font-size:13px}
 
-    /* Footer */
-    .footer{background:#10070e;color:#fff;padding:52px 0 30px}
-    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.footer-logo{width:min(470px,90%)}.footer-copy p{color:#9e8994;font-size:12px;max-width:570px;margin:12px 0 0}.footer-meta{text-align:right;color:#88727d;font-size:10px;line-height:1.8}.footer-rule{height:1px;background:rgba(255,255,255,.08);margin:32px 0 20px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;color:#66545e;font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+    /* FOOTER */
+    footer{background:#10070e;color:#fff;padding:48px 0 28px}
+    .footer-grid{display:flex;justify-content:space-between;gap:50px;align-items:end}
+    .footer-logo{width:min(470px,72%)}
+    .footer-meta{text-align:right;color:#8f7b85;font-size:10px;line-height:1.7}
+    .footer-rule{height:1px;background:rgba(255,255,255,.08);margin:28px 0 18px}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;color:#66545e;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
 
-    @media (max-width:980px){
-      .nav-links{display:none}.nav-status{display:none}
-      .hero{padding-top:112px}.hero-grid,.intro-head,.watch-grid,.format-head,.principles-grid,.join-grid,.support-head,.faq-grid{grid-template-columns:1fr}
-      .hero-grid{gap:40px}.hero-media{min-height:520px}.hero-card{left:16px}.hero-note{right:3px}
-      .manifesto,.stats,.goals{grid-template-columns:repeat(2,1fr)}
-      .mood-grid{grid-template-columns:1fr}.mood-image{min-height:560px}.mood-image::after{background:linear-gradient(to bottom,transparent 68%,#160914 100%)}.mood-copy{padding:65px 28px 80px}
-      .principles-copy,.faq-side{position:static}.join-visual{min-height:580px}.pipeline{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto;padding-bottom:8px}.join-process{grid-template-columns:repeat(5,minmax(90px,1fr));overflow-x:auto}
-      .footer-grid{grid-template-columns:1fr}.footer-meta{text-align:left}
+    @media(max-width:980px){
+      .nav-links{display:none}.status{display:none}
+      .hero{min-height:auto;padding-top:100px}
+      .hero-grid,.section-head,.format-head,.join-grid,.support-head,.faq-grid{grid-template-columns:1fr}
+      .hero-grid{gap:42px}.hero-copy{max-width:none}
+      .principles,.goals{grid-template-columns:repeat(2,1fr)}
+      .pipeline{grid-template-columns:repeat(5,minmax(150px,1fr));overflow-x:auto;padding-bottom:8px}
+      .example{grid-template-columns:1fr 1fr}.example div:nth-child(2){border-right:0}
+      .join-flow{grid-template-columns:repeat(5,minmax(100px,1fr));overflow-x:auto}
+      .faq-brand{position:static}.crest-card{min-height:360px}.footer-grid{display:block}.footer-meta{text-align:left;margin-top:22px}
     }
-    @media (max-width:640px){
-      .shell{width:min(100% - 28px,var(--max))}.section{padding:76px 0}.nav-wrap{top:9px;padding:0 9px}.nav{height:58px;border-radius:16px}.nav-brand img{height:34px}
-      .hero{min-height:auto;padding:94px 0 62px}.hero-copy p{font-size:16px}.hero-doctrine{grid-template-columns:1fr}.hero-media{min-height:470px}.hero-card{inset:24px 0 0 0}.hero-icon{width:104px;height:104px;left:-5px}.hero-note{width:170px;top:82px}.hero-note b{font-size:16px}
-      .manifesto,.stats,.goals{grid-template-columns:1fr}.manifesto article{min-height:220px}.manifesto h3{margin-top:38px}
-      .video-foot{align-items:flex-start;flex-direction:column}.mood-image{min-height:500px}.mood-copy{padding:52px 20px 66px}.mood-copy h2{font-size:48px}
-      .pipeline{grid-template-columns:1fr;overflow:visible}.pipe:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px}.join-visual{min-height:510px}.join-process{grid-template-columns:1fr 1fr;overflow:visible}.footer-bottom{flex-direction:column}
+    @media(max-width:640px){
+      .shell{width:min(var(--max),calc(100% - 28px))}
+      .nav-wrap{padding:9px 11px 20px}.nav{height:50px}.brand-mini img{width:34px;height:34px}.brand-mini span{font-size:14px}
+      .hero{padding:86px 0 56px}.hero-logo{margin-bottom:18px}.hero-copy p{font-size:15px}.hero-actions{display:grid}
+      .video-meta{display:block}.video-meta span{display:block;margin-top:4px}
+      .section{padding:72px 0}.principles,.goals{grid-template-columns:1fr}.principle{min-height:185px}.principle h3{margin-top:30px}
+      .example{grid-template-columns:1fr}.example div{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}.example div:last-child{border-bottom:0}
+      .what-matters{grid-template-columns:1fr}.join-flow{grid-template-columns:1fr 1fr;overflow:visible}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
     }
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
 <body>
   <header class="nav-wrap">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="nav-brand" href="#top" aria-label="Dice & Desire home"><img src="assets/dice-desire-horizontal.png" alt="Dice & Desire — Role Play After Dark" /></a>
-      <div class="nav-links"><a href="#concept">Concept</a><a href="#watch">Watch</a><a href="#format">Format</a><a href="#join">Join the Table</a><a href="#faq">FAQ</a></div>
-      <span class="nav-status">18+ · In development</span>
+      <a class="brand-mini" href="#top"><img src="./assets/logo-icon.png" alt=""><span>Dice & Desire</span></a>
+      <div class="nav-links">
+        <a href="#concept">Concept</a>
+        <a href="#format">Format</a>
+        <a href="#join">Join the Table</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-right"><span class="status">18+ · In development</span></div>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero dark">
+    <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <div class="hero-kicker"><span class="pill dark">18+ project</span><span class="pill dark">In development</span></div>
-          <img class="hero-logo" src="assets/dice-desire-horizontal.png" alt="Dice & Desire — Role Play After Dark" />
-          <h1>A real fantasy campaign with a <em>dangerous mood.</em></h1>
-          <p>A creator-led actual-play series built around story, improvisation, attraction, consequences, and the kind of cast chemistry viewers want to be invited into.</p>
-          <div class="hero-doctrine"><span>Real game</span><span>Real chemistry</span><span>Individual boundaries</span><span>Adult possibilities</span></div>
-          <div class="hero-actions"><a class="btn primary" href="#watch">Watch the project overview</a><a class="btn ghost" href="#join">Interested in the table?</a></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+            <span class="pill">18+ project</span><span class="pill">in development</span>
+          </div>
+          <img class="hero-logo" src="./assets/logo-horizontal.png" alt="Dice & Desire — Role Play After Dark">
+          <h1>A real fantasy campaign with an <em>after-dark edge.</em></h1>
+          <p>Story, improvisation, attraction, consequences, and a cast worth following — built as an actual-play show first, with adult possibilities shaped by individual boundaries.</p>
+          <div class="doctrine">
+            <span>Real game</span><span>Real chemistry</span><span>Individual boundaries</span><span>Adult possibilities</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#overview">Watch the overview</a>
+            <a class="btn outline" href="#join">Interested in joining?</a>
+          </div>
         </div>
-        <div class="hero-media" aria-label="Dice & Desire visual preview">
-          <div class="hero-card"><img src="assets/table-mood.jpg" alt="Fantasy tabletop gathering in a candlelit setting" /><div class="hero-card-copy"><small>The table is waiting</small><b>Story first. Chemistry always.</b></div></div>
-          <div class="hero-icon"><img src="assets/dice-desire-icon.png" alt="Dice & Desire d20 crest" /></div>
-          <div class="hero-note"><small>Working format</small><b>One session. Multiple episodes.</b><span>Batch the game without making the game feel batched.</span></div>
+
+        <div class="video-card" id="overview">
+          <span class="video-badge">Project overview · ~3 min</span>
+          <div class="video-inner">
+            <video controls playsinline preload="metadata" poster="./assets/project-overview-poster.jpg">
+              <source src="./assets/project-overview.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            <div class="video-meta">
+              <b>Dice & Desire · Project Overview</b>
+              <span>Best viewed with sound</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="brand-ribbon" aria-hidden="true"><img src="assets/dice-desire-banner-light.png" alt="" /></div>
+    <div class="brand-strip" aria-hidden="true">
+      <img src="./assets/logo-banner-light.png" alt="">
+    </div>
 
     <section class="section intro" id="concept">
       <div class="shell">
-        <div class="intro-head"><div><div class="eyebrow">01 / The concept</div><h2 class="display">The game is <em>not a prop.</em></h2></div><p class="lede">Dice & Desire works only if the campaign is worth following on its own. Adult tone adds another layer; it does not replace characters, choices, danger, comedy, or actual play.</p></div>
-        <div class="manifesto">
-          <article><small>REAL CAMPAIGN</small><h3>Consequences matter.</h3><p>Original story, recurring relationships, exploration, combat and choices that carry forward.</p></article>
-          <article><small>ADULT BY CONSENT</small><h3>Different ceilings can coexist.</h3><p>Adult participation is granular and performer-specific rather than a uniform requirement.</p></article>
-          <article><small>SERIALIZED</small><h3>Give viewers a reason to return.</h3><p>Episodes are chapters in an unfolding story, not isolated clips pretending to be a campaign.</p></article>
-          <article><small>CREATOR-LED</small><h3>The ensemble stays visible.</h3><p>The project should build attachment to the cast and support each creator’s individual identity.</p></article>
+        <div class="section-head">
+          <div><div class="eyebrow">01 / The concept</div><h2 class="display">The game is <em>not a prop.</em></h2></div>
+          <p class="lede">Dice & Desire only works if the campaign is worth following on its own. The adult tone adds another layer; it does not replace characters, choices, danger, comedy, or genuine play.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section watch" id="watch">
-      <div class="shell watch-grid">
-        <div class="watch-copy"><div class="eyebrow">02 / Project overview</div><h2 class="display">See the <em>idea in motion.</em></h2><p class="lede">This short overview captures the tone, format, Pilot Zero approach, recruitment philosophy and the direction the project is moving toward.</p><div class="watch-meta"><span class="pill light">~3 minutes</span><span class="pill light">Informational overview</span><span class="pill light">18+</span></div></div>
-        <div><div class="video-shell"><video controls playsinline preload="metadata" poster="assets/project-overview-poster.jpg"><source src="assets/project-overview.mp4" type="video/mp4" />Your browser does not support embedded video.</video></div><div class="video-foot"><b>Dice & Desire · Project Overview</b><span>Best viewed with sound</span></div></div>
-      </div>
-    </section>
-
-    <section class="mood">
-      <div class="mood-grid">
-        <div class="mood-image"><img src="assets/character-mood.jpg" alt="Stylized adult fantasy tabletop scene" /></div>
-        <div class="mood-copy"><div class="eyebrow">The tone</div><h2>Hot is easy.<br /><em>Want is earned.</em></h2><p>The strongest version of this show is not “adult performers happen to play a game.” It is an ensemble viewers become invested in — characters worth wanting, mistakes worth remembering, and chemistry that survives beyond a single scene.</p><div class="mood-quote">No one has to be the most explicit person at the table to belong at the table.</div></div>
+        <div class="principles">
+          <article class="principle"><small>REAL CAMPAIGN</small><h3>Consequences matter.</h3><p>Original story, recurring relationships, exploration, combat, and choices that carry forward.</p></article>
+          <article class="principle"><small>ADULT BY CONSENT</small><h3>Different ceilings can coexist.</h3><p>Adult participation is granular and performer-specific rather than a uniform expectation.</p></article>
+          <article class="principle"><small>SERIALIZED</small><h3>Give viewers a reason to return.</h3><p>Episodes are chapters in an unfolding story instead of isolated clips wearing a campaign costume.</p></article>
+          <article class="principle"><small>CREATOR-LED</small><h3>The ensemble stays visible.</h3><p>The show should deepen attachment to the cast while supporting each creator’s individual identity.</p></article>
+        </div>
       </div>
     </section>
 
     <section class="section format" id="format">
       <div class="shell">
-        <div class="format-head"><div><div class="eyebrow">03 / Working format</div><h2 class="display">Record the session.<br /><em>Release the story.</em></h2></div><p class="lede">A tabletop session and a released episode are different production units. That distinction gives the game room to breathe while creating a consistent serialized release rhythm.</p></div>
-        <div class="stats">
-          <div class="stat"><strong>~4 hr</strong><small>Recording session</small><p>Normal tabletop pacing with room for roleplay, combat and character beats.</p></div>
-          <div class="stat"><strong>~2 hr</strong><small>Edited material</small><p>A working yield target to validate during Pilot Zero, not a promise.</p></div>
-          <div class="stat"><strong>~4</strong><small>Story episodes</small><p>Roughly 25–40 minutes each, ending on natural narrative beats.</p></div>
-          <div class="stat"><strong>~2 wk</strong><small>Release runway</small><p>A two-per-week experiment can turn one strong session into a useful buffer.</p></div>
+        <div class="format-head">
+          <div><div class="eyebrow">02 / Working format</div><h2 class="display">One table session.<br><em>Several story chapters.</em></h2></div>
+          <p class="lede">The recording session and the released episode are different units. Long-form play can stay natural while the finished show is released in tighter, serialized chapters.</p>
         </div>
-        <div class="pipeline" aria-label="Production pipeline"><div class="pipe"><small>01</small><b>Prep</b></div><div class="pipe"><small>02</small><b>Record</b></div><div class="pipe"><small>03</small><b>Edit</b></div><div class="pipe"><small>04</small><b>Release</b></div><div class="pipe"><small>05</small><b>Clip & repeat</b></div></div>
-        <p class="working-note">Working example only. Pilot Zero determines the actual editing yield, episode length and sustainable cadence.</p>
-      </div>
-    </section>
-
-    <section class="section principles dark">
-      <div class="shell principles-grid">
-        <div class="principles-copy"><div class="eyebrow">04 / The table rules</div><h2 class="display">Built for <em>chemistry without pressure.</em></h2><p class="lede">Adult tone only works when everyone can state their boundaries clearly, trust the process, and know that different performers are allowed to participate differently.</p></div>
-        <div class="principle-list">
-          <div class="principle"><div class="principle-icon">20</div><div><b>Real play comes first.</b><span>People should want to keep playing together even if the project is smaller than hoped.</span></div></div>
-          <div class="principle"><div class="principle-icon">♡</div><div><b>Boundaries are granular.</b><span>Wardrobe, nudity, verbal roleplay, romance, flirting, bonus content, promotional images and audience interaction can all have different settings.</span></div></div>
-          <div class="principle"><div class="principle-icon">↔</div><div><b>Consent is collaborator-aware.</b><span>Comfort with one type of content — or one person — does not automatically imply comfort with another.</span></div></div>
-          <div class="principle"><div class="principle-icon">✦</div><div><b>Adult intensity can vary by episode.</b><span>The show does not need to escalate every week. Variation makes the adult moments feel organic rather than obligatory.</span></div></div>
+        <div class="pipeline">
+          <div class="step"><n>01</n><b>Record</b><span>A normal, unhurried tabletop session.</span></div>
+          <div class="step"><n>02</n><b>Edit</b><span>Protect chemistry, pacing, clarity, and the actual game.</span></div>
+          <div class="step"><n>03</n><b>Chapter</b><span>Cut around natural narrative beats — never just a timestamp.</span></div>
+          <div class="step"><n>04</n><b>Release</b><span>Serialized drops create rhythm and return visits.</span></div>
+          <div class="step"><n>05</n><b>Derive</b><span>Short clips, stills, teasers, and bonus moments come from the same source.</span></div>
         </div>
+        <div class="example" aria-label="Working production example">
+          <div><strong>~4 hr</strong><span>recording session</span></div>
+          <div><strong>~2 hr</strong><span>edited material</span></div>
+          <div><strong>~4</strong><span>story episodes</span></div>
+          <div><strong>~2 weeks</strong><span>at 2 releases / week</span></div>
+        </div>
+        <p class="working-note">Working example only. Pilot Zero is intended to test actual editing yield, pacing, and sustainable cadence before anything is locked.</p>
       </div>
     </section>
 
     <section class="section join" id="join">
       <div class="shell join-grid">
-        <div class="join-visual"><img src="assets/table-mood.jpg" alt="Stylized fantasy gaming table with a group gathered around it" /><div class="overlay"><small>INTERESTED IN THE TABLE?</small><b>Bring a character. Bring boundaries. Bring curiosity.</b></div></div>
-        <div class="join-copy"><div class="eyebrow">05 / Casting & collaboration</div><h2 class="display">We are looking for <em>people worth watching together.</em></h2><p class="lede">The strongest candidate is not automatically the most experienced player, biggest creator, or person willing to do the most adult content.</p>
-          <div class="criteria">
-            <div class="criterion"><i>✓</i><div><b>Reliability</b><span>Show up, communicate, and be realistic about time.</span></div></div>
-            <div class="criterion"><i>↔</i><div><b>Ensemble instinct</b><span>Make other people more interesting instead of competing for every beat.</span></div></div>
-            <div class="criterion"><i>◇</i><div><b>Roleplay & improv</b><span>Make choices, build on offers, and let a scene surprise you.</span></div></div>
-            <div class="criterion"><i>♡</i><div><b>Boundary clarity</b><span>Know your limits and respect that everyone else’s can differ.</span></div></div>
-            <div class="criterion"><i>◉</i><div><b>Creator professionalism</b><span>Understand cameras, edits, approvals, deadlines and collaboration.</span></div></div>
+        <div class="crest-card"><img src="./assets/logo-icon.png" alt="Dice & Desire crest"></div>
+        <div class="join-copy">
+          <div class="eyebrow">03 / Join the table</div>
+          <h2 class="display">Casting for chemistry, <em>not a checklist.</em></h2>
+          <p class="lede">The strongest cast is the group people want to watch interact for hours. Reliability and ensemble behavior matter more than follower count or how explicit someone is willing to be.</p>
+          <div class="what-matters">
+            <div class="matter"><b>Reliability</b><span>Shows up, communicates, and respects the production.</span></div>
+            <div class="matter"><b>Ensemble chemistry</b><span>Builds on other people instead of competing for oxygen.</span></div>
+            <div class="matter"><b>Roleplay & improv</b><span>Makes choices, reacts, commits, and lets scenes breathe.</span></div>
+            <div class="matter"><b>Boundary clarity</b><span>Can state limits and respect that other people’s may differ.</span></div>
           </div>
-          <div class="not-score"><span>Follower count ≠ score</span><span>Explicit-content ceiling ≠ score</span><span>D&D tenure ≠ score</span></div>
-          <div class="join-process"><div><span>01</span><b>Interest</b></div><div><span>02</span><b>Brief chat</b></div><div><span>03</span><b>Video call</b></div><div><span>04</span><b>Group chemistry</b></div><div><span>05</span><b>Pilot Zero</b></div></div>
+          <div class="not-metrics"><span>Follower count ≠ requirement</span><span>Explicitness ≠ score</span><span>D&D expertise ≠ mandatory</span></div>
+          <div class="join-flow">
+            <div><small>01</small><b>Interest</b></div>
+            <div><small>02</small><b>Brief chat</b></div>
+            <div><small>03</small><b>Video call</b></div>
+            <div><small>04</small><b>Group chemistry</b></div>
+            <div><small>05</small><b>Private Pilot Zero</b></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section support">
+    <section class="section support" id="support">
       <div class="shell">
-        <div class="support-head"><div><div class="eyebrow">06 / If it works</div><h2 class="display">Let the audience help make <em>the next version better.</em></h2></div><p>A future support-goal system can turn audience enthusiasm into visible production upgrades while also showing what viewers actually value.</p></div>
-        <div class="goals"><div class="goal"><small>ART</small><b>Commissioned character art</b></div><div class="goal"><small>GEAR</small><b>Better audio & production equipment</b></div><div class="goal"><small>LOOK</small><b>Costumes, props & visual upgrades</b></div><div class="goal"><small>TABLE</small><b>An eventual in-person special</b></div></div>
-        <p class="support-rule">Project goals can fund better production. They never buy access to a performer’s boundaries.</p>
+        <div class="support-head">
+          <div><div class="eyebrow">04 / Audience participation</div><h2 class="display">Help the project get <em>more ambitious.</em></h2></div>
+          <p>Planned support goals can turn audience enthusiasm into visible production upgrades while also showing the team what viewers actually value.</p>
+        </div>
+        <div class="goals">
+          <div class="goal"><small>PLANNED CONCEPT</small><b>Commissioned character art</b></div>
+          <div class="goal"><small>PLANNED CONCEPT</small><b>Better production equipment</b></div>
+          <div class="goal"><small>PLANNED CONCEPT</small><b>Costumes, props & presentation</b></div>
+          <div class="goal"><small>PLANNED CONCEPT</small><b>In-person special</b></div>
+        </div>
+        <p class="support-note">Support goals improve or expand the production. They are not promises tied to any performer’s sexual boundaries.</p>
       </div>
     </section>
 
     <section class="section faq" id="faq">
       <div class="shell faq-grid">
-        <div class="faq-side"><div class="eyebrow">07 / FAQ</div><h2 class="display">The short <em>version.</em></h2><p>The project is still in development. Pilot Zero exists specifically so the format can be tested before pretending every detail is finalized.</p><img class="faq-mark" src="assets/dice-desire-icon.png" alt="Dice & Desire crest" /></div>
+        <div class="faq-brand">
+          <div class="eyebrow">05 / FAQ</div>
+          <h2 class="display">The short <em>version.</em></h2>
+          <img src="./assets/logo-square.png" alt="Dice & Desire">
+        </div>
         <div>
-          <details open><summary>Is this actually a tabletop campaign?</summary><p>Yes. The game is the backbone of the project, not set dressing.</p></details>
-          <details><summary>Is explicit content required?</summary><p>No. Different performers can participate at completely different adult-content levels.</p></details>
-          <details><summary>How long are episodes?</summary><p>The working target is roughly 25–40 minutes, cut at natural story beats rather than arbitrary timestamps.</p></details>
-          <details><summary>How often would episodes release?</summary><p>Twice weekly is the leading experiment, subject to what Pilot Zero teaches us about editing yield and sustainability.</p></details>
-          <details><summary>What is Pilot Zero?</summary><p>A private proof-of-concept used to test cast chemistry, comfort, technical quality, GM pacing, editing load and promotional clip potential before public release.</p></details>
-          <details><summary>Is casting open?</summary><p>The project is in active development and the interest process is being designed. Current selection priorities are reliability, ensemble chemistry, improvisation, boundary clarity and creator professionalism.</p></details>
+          <details open><summary>Is this actually a tabletop campaign?</summary><p>Yes. The game is the foundation rather than a decorative excuse for unrelated content.</p></details>
+          <details><summary>Is explicit content required?</summary><p>No. Adult participation is granular and performer-specific. Different cast members can have different boundaries.</p></details>
+          <details><summary>How long are episodes?</summary><p>The current experiment is roughly 25–40 minutes per released chapter, with cuts based on natural story beats rather than an arbitrary timer.</p></details>
+          <details><summary>How often could episodes release?</summary><p>Twice weekly is a working experiment. Pilot Zero will determine whether that cadence is genuinely sustainable.</p></details>
+          <details><summary>Is casting open?</summary><p>The project is still in development and the recruitment process is being structured. Initial selection emphasizes reliability, chemistry, roleplay, communication, and boundary literacy.</p></details>
+          <details><summary>Is Pilot Zero public?</summary><p>No. It is private by default and exists to test chemistry, comfort, technology, pacing, and editing before public production.</p></details>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="shell">
-      <div class="footer-grid"><div class="footer-copy"><img class="footer-logo" src="assets/dice-desire-horizontal.png" alt="Dice & Desire — Role Play After Dark" /><p>A creator-led 18+ adult fantasy actual-play project. Original campaign. Individual boundaries. Built to be a show people follow, not a gimmick people click once.</p></div><div class="footer-meta">18+ adult-themed entertainment project<br />Working concept · In development<br />No explicit content displayed on this site</div></div>
-      <div class="footer-rule"></div><div class="footer-bottom"><span>Dice & Desire · Role Play After Dark</span><span>Real game · Real chemistry · Individual boundaries</span></div>
+      <div class="footer-grid">
+        <img class="footer-logo" src="./assets/logo-horizontal.png" alt="Dice & Desire — Role Play After Dark">
+        <div class="footer-meta">18+ adult-themed entertainment project<br>Currently in development</div>
+      </div>
+      <div class="footer-rule"></div>
+      <div class="footer-bottom"><span>Dice & Desire · Role Play After Dark</span><span>Real game · Real chemistry · Individual boundaries · Adult possibilities</span></div>
     </div>
   </footer>
 </body>
