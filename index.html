@@ -1,191 +1,234 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dice & Desire — Role Play After Dark</title>
-  <meta name="description" content="A creator-led serialized adult fantasy actual-play project built around real tabletop storytelling, ensemble chemistry, and individual boundaries." />
-  <meta name="theme-color" content="#27242C" />
-  <meta property="og:title" content="Dice & Desire — Role Play After Dark" />
-  <meta property="og:description" content="Real game. Real chemistry. Individual boundaries. Adult possibilities." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/social-card.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dice & Desire — Role Play After Dark" />
-  <meta name="twitter:description" content="Real game. Real chemistry. Individual boundaries. Adult possibilities." />
-  <meta name="twitter:image" content="assets/social-card.svg" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dice & Desire — Role Play After Dark</title>
+<meta name="description" content="A creator-led serialized adult fantasy actual-play project built around real tabletop storytelling, ensemble chemistry, and individual boundaries." />
+<meta name="theme-color" content="#1a0f19" />
+<style>
+:root{
+  --night:#130b12;
+  --night2:#21101f;
+  --plum:#552343;
+  --plum2:#7b355e;
+  --wine:#9d4a70;
+  --rose:#e0a0bd;
+  --blush:#f7e8ef;
+  --cream:#fff9f4;
+  --paper:#f4eadf;
+  --gold:#e4bd72;
+  --gold2:#f4d89b;
+  --ink:#24151f;
+  --muted:#6f5e68;
+  --line:rgba(77,35,61,.16);
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--night)}
+body{margin:0;color:var(--ink);background:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--rose);color:var(--night)}
+
+/* subtle grain + stars */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+
+.nav{position:fixed;z-index:100;left:50%;transform:translateX(-50%);top:18px;width:min(calc(100% - 28px),var(--max));height:62px;padding:0 18px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(22,10,20,.74);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;color:#fff;box-shadow:0 18px 45px rgba(0,0,0,.16)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.brandmark{width:34px;height:34px;display:grid;place-items:center;color:var(--gold2)}.brandmark svg{width:34px;height:34px}.brand small{display:block;text-transform:none;font:italic 12px Georgia,serif;color:var(--rose);letter-spacing:0;margin-top:1px}.navlinks{display:flex;gap:24px;font-size:12px;font-weight:750;color:#dbcbd3}.navlinks a:hover{color:#fff}.status{font-size:10px;letter-spacing:.14em;border:1px solid rgba(224,160,189,.35);padding:8px 10px;border-radius:999px;color:#f0c4d8}
+
+.hero{min-height:100svh;display:grid;place-items:center;background:
+radial-gradient(circle at 74% 20%,rgba(224,160,189,.15),transparent 28%),
+radial-gradient(circle at 20% 80%,rgba(228,189,114,.09),transparent 26%),
+linear-gradient(145deg,#120a11 0%,#23101f 48%,#3b1730 100%);color:#fff;position:relative;overflow:hidden;padding:130px 24px 80px}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.55) 0 1px,transparent 1.5px),radial-gradient(circle at 70% 18%,rgba(255,255,255,.35) 0 1px,transparent 1.5px),radial-gradient(circle at 82% 70%,rgba(255,255,255,.25) 0 1px,transparent 1.5px);background-size:160px 160px,210px 210px,250px 250px;opacity:.28}
+.hero-wrap{width:min(var(--max),100%);display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:center;position:relative;z-index:2}
+.hero-copy .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:900;margin:0 0 24px}.hero-copy h1{margin:0;font:600 clamp(64px,8.4vw,120px)/.79 Georgia,"Times New Roman",serif;letter-spacing:-.055em}.hero-copy h1 span{display:block}.hero-copy h1 .amp{font-style:italic;color:var(--rose);font-weight:400;font-size:.68em;margin:.06em 0}.hero-copy .tag{font:italic clamp(22px,2.8vw,35px) Georgia,serif;color:var(--gold2);margin:24px 0 0}.hero-copy .desc{font-size:18px;color:#dacbd3;max-width:580px;margin:26px 0 0}.doctrine{margin-top:34px;padding-left:14px;border-left:2px solid var(--rose);color:#a997a1;text-transform:uppercase;font-size:10px;letter-spacing:.13em;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.04em}.btn.primary{background:linear-gradient(135deg,var(--rose),var(--gold2));color:#25101f;box-shadow:0 10px 28px rgba(224,160,189,.18)}.btn.secondary{border:1px solid rgba(255,255,255,.2);color:#fff}.btn:hover{transform:translateY(-1px)}
+
+.hero-art{position:relative;min-height:620px;display:grid;place-items:center}.poster{width:min(100%,620px);aspect-ratio:4/5;border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 38px 80px rgba(0,0,0,.34);background:#1a0e18;position:relative}.poster:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),inset 0 -120px 140px rgba(0,0,0,.24);pointer-events:none}.float-note{position:absolute;right:-8px;bottom:58px;z-index:4;background:#fff6ef;color:#4f2c3d;border-radius:16px;padding:14px 16px;width:190px;box-shadow:0 18px 55px rgba(0,0,0,.26);transform:rotate(3deg)}.float-note small{display:block;color:#9f7287;font-size:9px;letter-spacing:.12em;font-weight:900}.float-note b{display:block;font:600 20px Georgia,serif;margin-top:5px}.float-note p{font-size:11px;color:#705d67;margin:6px 0 0}.badge-float{position:absolute;left:-14px;top:84px;z-index:4;border:1px solid rgba(244,216,155,.45);color:var(--gold2);background:rgba(24,10,21,.85);backdrop-filter:blur(8px);padding:10px 12px;border-radius:999px;font-size:10px;letter-spacing:.12em;font-weight:900}
+
+.section{padding:105px max(24px,calc((100vw - var(--max))/2))}.section-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--wine);margin-bottom:24px}.section h2{font:600 clamp(42px,5.6vw,72px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:0}.section h2 em{font-weight:400;color:var(--wine)}
+
+.intro{background:linear-gradient(180deg,#fff9f4,#f8efe7)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}.intro-text p{font-size:17px;color:var(--muted);margin:0 0 18px}.intro-text strong{color:var(--ink)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:58px}.feature{min-height:235px;border-radius:24px;padding:22px;position:relative;overflow:hidden;color:#fff;box-shadow:0 18px 50px rgba(45,19,36,.08)}.feature:nth-child(1){background:linear-gradient(145deg,#39152e,#6f2d55)}.feature:nth-child(2){background:linear-gradient(145deg,#6a2e52,#ad557b)}.feature:nth-child(3){background:linear-gradient(145deg,#3c2437,#5a3f62)}.feature:nth-child(4){background:linear-gradient(145deg,#784629,#b97f4e)}.feature svg{position:absolute;right:-18px;bottom:-18px;width:150px;opacity:.32}.feature .num{font:italic 15px Georgia,serif;color:#f6d7e5}.feature h3{font:600 24px Georgia,serif;margin:52px 0 8px}.feature p{font-size:13px;color:rgba(255,255,255,.76);margin:0;max-width:220px}
+
+.format{background:#170d16;color:#fff;position:relative;overflow:hidden}.format:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0,rgba(224,160,189,.09),transparent 35%),radial-gradient(circle at 0 100%,rgba(228,189,114,.06),transparent 30%)}.format>*{position:relative;z-index:1}.format .section-label{color:var(--gold2)}.format h2 em{color:var(--rose)}.format-lede{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.format-lede p{color:#baa8b2;font-size:17px;margin:0}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:58px}.step{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.11);border-radius:24px;padding:24px;min-height:250px;position:relative}.step:before{content:"";position:absolute;inset:0;border-radius:24px;background:linear-gradient(135deg,rgba(224,160,189,.07),transparent 50%);pointer-events:none}.step .step-icon{width:76px;height:76px;border-radius:20px;background:rgba(224,160,189,.08);display:grid;place-items:center;margin-bottom:24px}.step .step-icon svg{width:52px;height:52px}.step b{display:block;font:600 34px Georgia,serif;color:var(--rose)}.step small{display:block;letter-spacing:.13em;font-size:9px;font-weight:900;color:#fff;margin-top:3px}.step p{font-size:12px;color:#9e8e97;margin-top:14px}.working{margin-top:18px;color:#7e6d76;font-size:11px}.episode-art{margin-top:58px;border-radius:30px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,#2b1326,#431d38);display:grid;grid-template-columns:1.25fr .75fr;min-height:350px}.episode-visual{position:relative;overflow:hidden}.episode-visual svg{width:100%;height:100%}.episode-copy{padding:42px;display:flex;flex-direction:column;justify-content:center}.episode-copy small{color:var(--gold2);letter-spacing:.14em;font-weight:900}.episode-copy h3{font:600 32px Georgia,serif;margin:10px 0;color:#fff}.episode-copy p{color:#c5b4bd;font-size:14px}.episode-copy .chip{width:max-content;margin-top:10px;border:1px solid rgba(255,255,255,.15);padding:7px 10px;border-radius:999px;font-size:10px;color:#d9c9d1}
+
+.table-section{background:linear-gradient(180deg,#f3e8dd,#fff8f2)}.cast-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:end}.cast-top p{font-size:17px;color:var(--muted);margin:0}.cast-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}.cast-card{min-height:390px;border-radius:25px;overflow:hidden;position:relative;background:#2b1726;box-shadow:0 18px 55px rgba(61,28,48,.12)}.cast-card svg{width:100%;height:100%;position:absolute;inset:0}.cast-card .label{position:absolute;left:18px;right:18px;bottom:18px;padding:13px 14px;border-radius:14px;background:rgba(255,250,246,.92);backdrop-filter:blur(8px);color:#48263b}.cast-card .label small{display:block;font-size:9px;letter-spacing:.13em;color:#9c6d84;font-weight:900}.cast-card .label b{font:600 21px Georgia,serif}.cast-card:nth-child(2){background:#40223c}.cast-card:nth-child(3){background:#2d2a44}.cast-card:nth-child(4){background:#6b3b34}
+
+.casting{background:#fffaf6}.casting-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px}.criteria{display:grid;gap:10px}.criterion{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff}.criterion .icon{width:48px;height:48px;border-radius:14px;background:var(--blush);display:grid;place-items:center;color:var(--wine);font-size:20px}.criterion b{display:block;font-size:13px}.criterion span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.process{margin-top:52px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.process div{padding:18px;border-radius:16px;background:linear-gradient(180deg,#6f2f55,#49223e);color:#fff}.process span{font:italic 14px Georgia,serif;color:var(--gold2)}.process b{display:block;font-size:11px;margin-top:14px}.not-metrics{margin-top:22px;display:flex;gap:9px;flex-wrap:wrap}.not-metrics span{padding:8px 11px;border-radius:999px;background:#f4e7ee;color:#7a4a61;font-size:11px}
+
+.support{background:linear-gradient(135deg,#4e213f 0%,#2b1526 55%,#1a0e18 100%);color:#fff}.support .section-label{color:var(--gold2)}.support h2 em{color:var(--rose)}.support-intro{max-width:760px}.support-intro p{color:#c5b4bd;font-size:17px}.goal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}.goal{border-radius:22px;min-height:230px;padding:22px;border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden}.goal:nth-child(1){background:linear-gradient(145deg,#7a355e,#a75b7e)}.goal:nth-child(2){background:linear-gradient(145deg,#40537b,#674f79)}.goal:nth-child(3){background:linear-gradient(145deg,#8b4b37,#bc7551)}.goal:nth-child(4){background:linear-gradient(145deg,#5e3e2e,#9f754b)}.goal svg{position:absolute;right:-5px;bottom:-5px;width:125px;opacity:.34}.goal small{font-size:9px;letter-spacing:.14em;font-weight:900;color:#fff2d9}.goal h3{font:600 22px Georgia,serif;max-width:180px;margin:86px 0 0}.support-rule{margin-top:24px;border-left:2px solid var(--gold2);padding-left:14px;color:#d8c6cf;font-size:12px}
+
+.faq{background:linear-gradient(180deg,#fffaf6,#f1e4d9)}.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}.faq-copy p{color:var(--muted);font-size:15px}.questions{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:800;font-size:14px}summary::-webkit-details-marker{display:none}summary:after{content:"+";float:right;font:400 24px Georgia,serif;color:var(--wine)}details[open] summary:after{content:"−"}details p{color:var(--muted);font-size:13px;margin:0 0 20px;max-width:640px}
+
+footer{background:#0f080e;color:#9d8a94;padding:38px max(24px,calc((100vw - var(--max))/2));display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:11px}.footerbrand b{display:block;color:#fff;letter-spacing:.1em}.footerbrand span{font:italic 13px Georgia,serif;color:var(--rose)}footer a{color:#d9c0cc}
+
+@media(max-width:980px){
+ .navlinks{display:none}.hero-wrap,.intro-grid,.format-lede,.cast-top,.casting-grid,.faq-grid{grid-template-columns:1fr}.hero-art{min-height:520px}.poster{max-width:520px}.feature-grid,.timeline,.cast-cards,.goal-grid{grid-template-columns:repeat(2,1fr)}.episode-art{grid-template-columns:1fr}.episode-visual{min-height:320px}.process{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:640px){
+ .nav{top:10px;height:56px}.status{display:none}.hero{padding-top:100px}.hero-art{min-height:410px}.float-note{right:0;bottom:25px;width:165px}.badge-float{left:0;top:30px}.section{padding-top:78px;padding-bottom:78px}.feature-grid,.timeline,.cast-cards,.goal-grid,.process{grid-template-columns:1fr}.feature{min-height:200px}.step{min-height:210px}.cast-card{min-height:430px}.episode-copy{padding:28px}footer{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
 </head>
 <body>
-  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle" hidden>
-    <div class="age-card">
-      <div class="sigil" aria-hidden="true">20</div>
-      <p class="eyebrow">18+ PROJECT</p>
-      <h1 id="ageGateTitle">Welcome to the table.</h1>
-      <p>Dice & Desire is an adult-themed tabletop entertainment project. The public site itself is non-explicit, but the project is intended for adults.</p>
-      <div class="age-actions">
-        <button class="btn btn-primary" id="enterSite">I’m 18+ — Enter</button>
-        <a class="btn btn-ghost" href="https://www.google.com/">Leave</a>
-      </div>
-    </div>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Dice and Desire home">
+    <span class="brandmark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,5 89,28 84,72 50,95 16,72 11,28" stroke="currentColor" stroke-width="5"/><path d="M50 5 11 28 50 54 89 28 50 5M11 28 16 72 50 54 84 72 89 28M16 72 50 95 84 72" stroke="currentColor" stroke-width="3" opacity=".7"/></svg>
+    </span>
+    <span>Dice & Desire<small>Role Play After Dark</small></span>
+  </a>
+  <nav class="navlinks" aria-label="Primary navigation"><a href="#show">The Show</a><a href="#format">Format</a><a href="#table">The Table</a><a href="#casting">Casting</a><a href="#faq">FAQ</a></nav>
+  <span class="status">18+ · IN DEVELOPMENT</span>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="hero-wrap">
+  <div class="hero-copy">
+    <p class="eyebrow">A creator-led fantasy actual-play project</p>
+    <h1><span>Dice</span><span class="amp">&</span><span>Desire</span></h1>
+    <p class="tag">Role Play After Dark</p>
+    <p class="desc">A real tabletop campaign with an adult edge — built around story, chaos, character chemistry, and performers who decide their own boundaries.</p>
+    <div class="actions"><a class="btn primary" href="#show">Explore the concept</a><a class="btn secondary" href="#casting">Casting & collaboration</a></div>
+    <p class="doctrine">Real game. Real chemistry.<br>Individual boundaries. Adult possibilities.</p>
   </div>
+  <div class="hero-art" aria-label="Stylized fantasy tabletop illustration">
+    <div class="badge-float">SERIALIZED · CREATOR-LED · 18+</div>
+    <div class="poster">
+      <svg viewBox="0 0 700 875" role="img" aria-label="A candlelit fantasy gaming table with dice, cards and a glowing d20">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a1024"/><stop offset=".55" stop-color="#542144"/><stop offset="1" stop-color="#8b3f62"/></linearGradient>
+          <radialGradient id="glow"><stop stop-color="#ffe6a8" stop-opacity=".9"/><stop offset="1" stop-color="#ffe6a8" stop-opacity="0"/></radialGradient>
+          <linearGradient id="velvet" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7a2e57"/><stop offset="1" stop-color="#31152a"/></linearGradient>
+          <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-opacity=".35"/></filter>
+        </defs>
+        <rect width="700" height="875" fill="url(#bg)"/>
+        <circle cx="520" cy="150" r="150" fill="url(#glow)" opacity=".35"/>
+        <g fill="#f7dba0" opacity=".75"><circle cx="85" cy="95" r="2"/><circle cx="147" cy="155" r="1.6"/><circle cx="576" cy="92" r="2"/><circle cx="628" cy="215" r="1.7"/><circle cx="390" cy="95" r="1.4"/></g>
+        <path d="M0 520 Q180 450 350 510T700 500V875H0Z" fill="url(#velvet)"/>
+        <ellipse cx="350" cy="655" rx="284" ry="132" fill="#1d101a" opacity=".45"/>
+        <ellipse cx="350" cy="626" rx="255" ry="112" fill="#54213f" stroke="#d993af" stroke-opacity=".25" stroke-width="3"/>
+        <!-- cards -->
+        <g transform="translate(130 505) rotate(-15)" filter="url(#shadow)"><rect width="138" height="196" rx="16" fill="#fff4e8"/><rect x="10" y="10" width="118" height="176" rx="10" fill="none" stroke="#a04870" stroke-width="2"/><path d="M69 43 89 77 69 111 49 77Z" fill="#a04870"/><circle cx="69" cy="137" r="18" fill="none" stroke="#d1a75d" stroke-width="3"/></g>
+        <g transform="translate(440 488) rotate(13)" filter="url(#shadow)"><rect width="132" height="188" rx="16" fill="#2a1830" stroke="#e8bc75" stroke-width="2"/><path d="M66 28 97 94 66 160 35 94Z" fill="none" stroke="#d18fae" stroke-width="4"/><circle cx="66" cy="94" r="18" fill="#d18fae" opacity=".8"/></g>
+        <!-- candle left -->
+        <g transform="translate(80 280)"><ellipse cx="24" cy="225" rx="48" ry="14" fill="#160c14" opacity=".45"/><rect x="10" y="72" width="28" height="151" rx="10" fill="#f4e0c5"/><path d="M24 72 C2 49 21 23 27 0 C48 33 43 55 24 72Z" fill="#ffd58a"/><circle cx="25" cy="42" r="54" fill="url(#glow)"/></g>
+        <!-- candle right -->
+        <g transform="translate(560 300)"><ellipse cx="24" cy="205" rx="45" ry="13" fill="#160c14" opacity=".45"/><rect x="10" y="70" width="28" height="133" rx="10" fill="#f2d8be"/><path d="M24 70 C5 48 22 26 29 4 C46 34 42 53 24 70Z" fill="#ffd58a"/><circle cx="25" cy="42" r="50" fill="url(#glow)"/></g>
+        <!-- d20 -->
+        <g transform="translate(267 462)" filter="url(#shadow)">
+          <circle cx="88" cy="104" r="118" fill="url(#glow)" opacity=".35"/>
+          <polygon points="88,5 170,53 153,148 88,202 23,148 6,53" fill="#ba5a82" stroke="#ffe0a0" stroke-width="4"/>
+          <path d="M88 5 6 53 88 101 170 53 88 5M6 53 23 148 88 101 153 148 170 53M23 148 88 202 153 148M88 5V101M88 101V202" fill="none" stroke="#ffe0a0" stroke-width="2" opacity=".9"/>
+          <text x="88" y="118" text-anchor="middle" fill="#fff8e9" font-family="Georgia" font-size="43" font-style="italic">20</text>
+        </g>
+        <!-- dice -->
+        <g transform="translate(270 720) rotate(9)"><rect width="54" height="54" rx="11" fill="#f3d9e5"/><g fill="#7d365d"><circle cx="15" cy="15" r="5"/><circle cx="39" cy="39" r="5"/><circle cx="15" cy="39" r="5"/><circle cx="39" cy="15" r="5"/></g></g>
+        <g transform="translate(394 724) rotate(-11)"><rect width="50" height="50" rx="10" fill="#e4bd72"/><g fill="#4c2341"><circle cx="14" cy="14" r="4"/><circle cx="36" cy="36" r="4"/><circle cx="25" cy="25" r="4"/></g></g>
+        <!-- decorative vines -->
+        <path d="M35 760 C95 720 77 675 126 649 M35 760 C91 790 122 772 150 738" fill="none" stroke="#e6b7cb" stroke-opacity=".26" stroke-width="3"/>
+        <path d="M665 126 C610 160 615 205 570 235 M665 126 C626 95 590 105 558 133" fill="none" stroke="#f0d18d" stroke-opacity=".28" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="float-note"><small>WORKING FORMAT</small><b>One session → multiple episodes</b><p>Record like a campaign. Release like a series.</p></div>
+  </div>
+ </div>
+</section>
 
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Dice and Desire home">
-      <span class="brand-mark">D&D</span>
-      <span class="brand-copy"><strong>Dice & Desire</strong><small>Role Play After Dark</small></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-    <nav class="nav" id="siteNav" aria-label="Primary navigation">
-      <a href="#concept">Concept</a>
-      <a href="#format">Format</a>
-      <a href="#table">The Table</a>
-      <a href="#recruitment">Recruitment</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </header>
+<section class="section intro" id="show">
+ <div class="section-label">01 / THE SHOW</div>
+ <div class="intro-grid">
+   <h2>The fantasy is better when <em>the game is real.</em></h2>
+   <div class="intro-text"><p><strong>Dice & Desire</strong> is a serialized adult fantasy actual-play project. The campaign is not a prop: choices, dice, recurring characters, relationships, failures, combat, and cast dynamics carry the show.</p><p>The “after dark” layer can be flirtation, roleplayed sexuality, suggestive presentation, nudity, or separate bonus material — according to each performer’s boundaries.</p></div>
+ </div>
+ <div class="feature-grid">
+   <article class="feature"><span class="num">01</span><h3>Actual play first</h3><p>A campaign worth following even when nothing sexy happens.</p><svg viewBox="0 0 160 160" fill="none"><polygon points="80,12 140,48 128,116 80,148 32,116 20,48" stroke="white" stroke-width="5"/><path d="M80 12 20 48 80 86 140 48M20 48 32 116 80 86 128 116 140 48M32 116 80 148 128 116" stroke="white" stroke-width="3"/></svg></article>
+   <article class="feature"><span class="num">02</span><h3>Adult by consent</h3><p>Different limits are expected. Nobody has to match anyone else.</p><svg viewBox="0 0 160 160"><path d="M80 133 C28 101 24 65 43 45 C61 26 78 39 80 54 C82 39 99 26 117 45 C136 65 132 101 80 133Z" fill="none" stroke="white" stroke-width="5"/></svg></article>
+   <article class="feature"><span class="num">03</span><h3>Serialized story</h3><p>Long sessions become tighter chapters with natural endings and hooks.</p><svg viewBox="0 0 160 160" fill="none"><rect x="28" y="32" width="104" height="96" rx="15" stroke="white" stroke-width="5"/><path d="M54 52h52M54 76h52M54 100h34" stroke="white" stroke-width="5" stroke-linecap="round"/></svg></article>
+   <article class="feature"><span class="num">04</span><h3>Creator-led</h3><p>The project should send attention back toward the people who make it.</p><svg viewBox="0 0 160 160" fill="none"><circle cx="80" cy="63" r="27" stroke="white" stroke-width="5"/><path d="M34 135c9-30 25-45 46-45s37 15 46 45" stroke="white" stroke-width="5" stroke-linecap="round"/><path d="M113 43l18-12M119 61h22" stroke="white" stroke-width="4" stroke-linecap="round"/></svg></article>
+ </div>
+</section>
 
-  <main>
-    <section class="hero dark-band">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <div class="status-line"><span class="status-pill">IN DEVELOPMENT</span><span>Serialized adult fantasy actual play</span></div>
-          <p class="eyebrow">DICE & DESIRE</p>
-          <h1>Role Play<br/><em>After Dark.</em></h1>
-          <p class="hero-lede">A creator-led actual-play series where the game is real, the cast chemistry matters, and adult participation stays individual, explicit, and consent-driven.</p>
-          <p class="doctrine">Real game. Real chemistry. Individual boundaries. Adult possibilities.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#concept">Explore the concept</a>
-            <a class="btn btn-outline" href="#recruitment">Casting / collaboration</a>
-          </div>
-        </div>
-        <div class="hero-art reveal" aria-hidden="true">
-          <div class="d20-wrap">
-            <svg class="d20" viewBox="0 0 300 300" role="img" aria-label="Abstract twenty-sided die motif">
-              <defs>
-                <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#B87A9A"/><stop offset="1" stop-color="#6E3A5D"/></linearGradient>
-              </defs>
-              <polygon points="150,20 260,90 230,230 150,280 70,230 40,90" fill="none" stroke="url(#g)" stroke-width="2"/>
-              <path d="M150 20L150 280M40 90L260 90M70 230L230 230M40 90L230 230M260 90L70 230M150 20L70 230M150 20L230 230M40 90L150 280M260 90L150 280" fill="none" stroke="#B87A9A" stroke-opacity=".34" stroke-width="1.4"/>
-              <circle cx="150" cy="150" r="45" fill="#27242C" stroke="#B87A9A" stroke-width="1.5"/>
-              <text x="150" y="164" text-anchor="middle" fill="#FBF8F6" font-size="42" font-family="DM Sans, sans-serif" font-weight="700">20</text>
-            </svg>
-            <span class="orbit orbit-1"></span><span class="orbit orbit-2"></span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-footnote">Original setting · remote-first production · finite proof-of-concept season</div>
-    </section>
+<section class="section format" id="format">
+ <div class="section-label">02 / THE FORMAT</div>
+ <div class="format-lede"><h2>One night at the table.<br><em>Weeks of story.</em></h2><p>The leading model separates a recording session from a released episode. We keep the tabletop rhythm natural, then shape the best material into chapters people can actually follow.</p></div>
+ <div class="timeline">
+   <article class="step"><div class="step-icon"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="25" stroke="#e0a0bd" stroke-width="3"/><path d="M25 19 47 32 25 45Z" fill="#e4bd72"/></svg></div><b>~4 hr</b><small>RECORD</small><p>A normal tabletop session with room for roleplay, story beats and combat.</p></article>
+   <article class="step"><div class="step-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M14 18h36M14 32h24M14 46h31" stroke="#e0a0bd" stroke-width="4" stroke-linecap="round"/><circle cx="44" cy="32" r="5" fill="#e4bd72"/></svg></div><b>~2 hr</b><small>EDITED</small><p>Release-quality story after dead air, setup, delays and weaker beats are trimmed.</p></article>
+   <article class="step"><div class="step-icon"><svg viewBox="0 0 64 64" fill="none"><rect x="11" y="14" width="42" height="36" rx="5" stroke="#e0a0bd" stroke-width="3"/><path d="m25 23 17 9-17 9Z" fill="#e4bd72"/></svg></div><b>~4</b><small>EPISODES</small><p>Roughly 25–40 minutes each, cut around story beats rather than timestamps.</p></article>
+   <article class="step"><div class="step-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M16 17h32v32H16z" stroke="#e0a0bd" stroke-width="3"/><path d="M22 10v14M42 10v14M16 27h32" stroke="#e4bd72" stroke-width="3"/></svg></div><b>~2 weeks</b><small>RELEASES</small><p>At two episodes per week, one strong session can create a meaningful buffer.</p></article>
+ </div>
+ <p class="working">Working example only. Pilot Zero determines the actual editing yield, episode length and sustainable cadence.</p>
+ <div class="episode-art">
+  <div class="episode-visual">
+    <svg viewBox="0 0 760 380" aria-label="Illustrated episode montage">
+      <defs><linearGradient id="ep" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7e365f"/><stop offset="1" stop-color="#271322"/></linearGradient><radialGradient id="moon"><stop stop-color="#f4d89b"/><stop offset="1" stop-color="#f4d89b" stop-opacity="0"/></radialGradient></defs>
+      <rect width="760" height="380" fill="url(#ep)"/><circle cx="586" cy="76" r="95" fill="url(#moon)" opacity=".24"/><circle cx="586" cy="76" r="45" fill="#f3d49a" opacity=".85"/>
+      <path d="M0 300 120 220 220 280 330 180 430 245 530 150 760 300V380H0Z" fill="#1c1019" opacity=".72"/>
+      <path d="M0 336 130 260 240 316 350 230 470 295 595 205 760 325V380H0Z" fill="#2e1527"/>
+      <g transform="translate(120 84)"><rect width="155" height="205" rx="16" fill="#fff1e4" transform="rotate(-6 77 102)"/><path d="M77 45 105 100 77 155 49 100Z" fill="#9c476f"/><circle cx="77" cy="100" r="12" fill="#e4bd72"/></g>
+      <g transform="translate(330 92)"><polygon points="88,8 166,52 150,145 88,198 26,145 10,52" fill="#b4527b" stroke="#f7dba0" stroke-width="4"/><path d="M88 8 10 52 88 101 166 52 88 8M10 52 26 145 88 101 150 145 166 52M26 145 88 198 150 145" fill="none" stroke="#f7dba0" stroke-width="2"/><text x="88" y="118" text-anchor="middle" fill="#fff5e2" font-family="Georgia" font-size="38">20</text></g>
+    </svg>
+  </div>
+  <div class="episode-copy"><small>SERIALIZATION</small><h3>A chapter should feel like an episode — not a chopped Zoom call.</h3><p>Natural cliffhangers, reveals, wins, losses and scene changes decide the cut. Runtime is a target, not the editor.</p><span class="chip">Working target · 25–40 min</span></div>
+ </div>
+</section>
 
-    <section class="section light" id="concept">
-      <div class="section-heading reveal">
-        <p class="eyebrow">01 / THE CONCEPT</p>
-        <h2>The game is not a prop.</h2>
-        <p>Dice & Desire is designed to work as entertainment in its own right: recurring characters, consequences, comedy, combat, relationships, and story first. The adult dimension adds another creative layer without replacing the campaign.</p>
-      </div>
-      <div class="card-grid four-up">
-        <article class="editorial-card reveal"><span class="num">01</span><h3>Genuine campaign</h3><p>A real ongoing fantasy story with consequences, choices, progression, and an ensemble viewers can invest in.</p></article>
-        <article class="editorial-card reveal"><span class="num">02</span><h3>Adult by consent</h3><p>Flirting, roleplayed sexuality, nudity, or bonus content can vary by performer. No universal explicit-content requirement.</p></article>
-        <article class="editorial-card reveal"><span class="num">03</span><h3>Serialized story</h3><p>Sessions become narrative chapters so viewers have a reason to follow the cast, story, and relationships over time.</p></article>
-        <article class="editorial-card reveal"><span class="num">04</span><h3>Creator-led</h3><p>The shared project should amplify participating creators, not flatten them into a single anonymous brand.</p></article>
-      </div>
-    </section>
+<section class="section table-section" id="table">
+ <div class="section-label">03 / THE TABLE</div>
+ <div class="cast-top"><h2>Cast chemistry is <em>the actual special effect.</em></h2><p>The project is designed around a small recurring ensemble. The site can later reveal real cast portraits and character art here; for now, the cards intentionally stay anonymous.</p></div>
+ <div class="cast-cards">
+  <article class="cast-card"><svg viewBox="0 0 320 430"><defs><linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7b355e"/><stop offset="1" stop-color="#2b1425"/></linearGradient></defs><rect width="320" height="430" fill="url(#c1)"/><circle cx="160" cy="88" r="86" fill="#e4bd72" opacity=".12"/><circle cx="160" cy="160" r="56" fill="#f0bdd1" opacity=".48"/><path d="M54 392c14-111 57-169 106-169s92 58 106 169" fill="#1a0e18" opacity=".8"/><path d="M80 52 160 22l80 30" fill="none" stroke="#f1d9a3" stroke-opacity=".4" stroke-width="2"/></svg><div class="label"><small>CAST REVEAL</small><b>Coming later</b></div></article>
+  <article class="cast-card"><svg viewBox="0 0 320 430"><rect width="320" height="430" fill="#4a2743"/><path d="M30 54 160 8l130 46-36 316H66Z" fill="#6f3457"/><circle cx="160" cy="160" r="58" fill="#d49ab7" opacity=".42"/><path d="M42 400c16-112 65-172 118-172s102 60 118 172" fill="#24121f" opacity=".84"/><g fill="#f0d28c" opacity=".55"><circle cx="58" cy="80" r="3"/><circle cx="261" cy="101" r="2"/><circle cx="237" cy="58" r="2"/></g></svg><div class="label"><small>CAST REVEAL</small><b>Coming later</b></div></article>
+  <article class="cast-card"><svg viewBox="0 0 320 430"><defs><linearGradient id="c3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#3b375a"/><stop offset="1" stop-color="#1c152a"/></linearGradient></defs><rect width="320" height="430" fill="url(#c3)"/><circle cx="230" cy="86" r="74" fill="#f0d28c" opacity=".17"/><path d="M50 356 160 34l110 322" fill="none" stroke="#b88fbd" stroke-opacity=".28" stroke-width="3"/><circle cx="160" cy="162" r="55" fill="#bca1c6" opacity=".38"/><path d="M50 400c21-116 66-170 110-170s89 54 110 170" fill="#17101e" opacity=".86"/></svg><div class="label"><small>CAST REVEAL</small><b>Coming later</b></div></article>
+  <article class="cast-card"><svg viewBox="0 0 320 430"><defs><linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8f513e"/><stop offset="1" stop-color="#36201f"/></linearGradient></defs><rect width="320" height="430" fill="url(#c4)"/><circle cx="86" cy="80" r="90" fill="#f0c87d" opacity=".16"/><path d="M20 330C100 270 220 270 300 330" fill="none" stroke="#f1c687" stroke-opacity=".24" stroke-width="4"/><circle cx="160" cy="160" r="56" fill="#e5aa8e" opacity=".35"/><path d="M50 400c18-116 65-172 110-172s92 56 110 172" fill="#241312" opacity=".84"/></svg><div class="label"><small>CAST REVEAL</small><b>Coming later</b></div></article>
+ </div>
+</section>
 
-    <section class="section ink" id="format">
-      <div class="split-heading reveal">
-        <div><p class="eyebrow">02 / WORKING FORMAT</p><h2>One session. Multiple episodes.</h2></div>
-        <p>The leading model separates the tabletop recording session from the released episode. That creates a production buffer, smaller editing cycles, and a stronger serialized release rhythm.</p>
-      </div>
-      <div class="flow reveal" aria-label="Production flow">
-        <div><b>RECORD</b><span>full tabletop session</span></div><i>→</i>
-        <div><b>EDIT</b><span>shape the usable story</span></div><i>→</i>
-        <div><b>CHAPTER</b><span>cut natural narrative beats</span></div><i>→</i>
-        <div><b>RELEASE</b><span>serialized episodes</span></div><i>→</i>
-        <div><b>CLIP</b><span>public discovery assets</span></div>
-      </div>
-      <div class="metric-panel reveal">
-        <div><strong>~4 hr</strong><span>recording session</span></div>
-        <div><strong>~2 hr</strong><span>edited material</span></div>
-        <div><strong>~4</strong><span>story episodes</span></div>
-        <div><strong>~2 weeks</strong><span>at 2 releases / week</span></div>
-      </div>
-      <p class="caption">Working example only. Pilot Zero will determine the actual editing yield, ideal runtime, and sustainable cadence.</p>
-    </section>
+<section class="section casting" id="casting">
+ <div class="section-label">04 / CASTING & COLLABORATION</div>
+ <div class="casting-grid">
+  <div><h2>We are casting for <em>chemistry, not a checklist.</em></h2><p style="font-size:17px;color:var(--muted);max-width:570px">The strongest candidate is not automatically the most experienced player, the biggest creator, or the person willing to do the most adult content.</p></div>
+  <div class="criteria">
+   <div class="criterion"><div class="icon">✦</div><div><b>Reliability</b><span>Show up, communicate, and be realistic about time.</span></div></div>
+   <div class="criterion"><div class="icon">↔</div><div><b>Ensemble instinct</b><span>Make other people more interesting instead of competing for every beat.</span></div></div>
+   <div class="criterion"><div class="icon">◇</div><div><b>Roleplay & improv</b><span>Make choices, build on offers, and let a scene surprise you.</span></div></div>
+   <div class="criterion"><div class="icon">♡</div><div><b>Boundary clarity</b><span>Know your limits and respect that everyone else’s can differ.</span></div></div>
+   <div class="criterion"><div class="icon">◉</div><div><b>Creator professionalism</b><span>Understand cameras, edits, approvals, deadlines, and collaboration.</span></div></div>
+  </div>
+ </div>
+ <div class="process"><div><span>01</span><b>Interest</b></div><div><span>02</span><b>Brief chat</b></div><div><span>03</span><b>Video call</b></div><div><span>04</span><b>Group chemistry</b></div><div><span>05</span><b>Pilot Zero</b></div></div>
+ <div class="not-metrics"><span>Follower count ≠ score</span><span>Explicit-content ceiling ≠ score</span><span>D&D tenure ≠ score</span><span>Matching boundaries ≠ requirement</span></div>
+</section>
 
-    <section class="section light ecosystem">
-      <div class="section-heading reveal"><p class="eyebrow">03 / THE AUDIENCE GETS</p><h2>More than a weekly upload.</h2></div>
-      <div class="ecosystem-grid">
-        <article class="feature-block reveal"><span class="tag">FLAGSHIP</span><h3>Serialized actual play</h3><p>Story, roleplay, exploration, combat, humor, relationships, mature themes, and the cast itself.</p></article>
-        <article class="feature-block reveal"><span class="tag">BONUS</span><h3>Subscriber extras</h3><p>Bloopers, setup, cast chatter, character pieces, side scenes, costume material, and collaborative specials.</p></article>
-        <article class="feature-block reveal"><span class="tag">DISCOVERY</span><h3>Public-safe content</h3><p>Actual-play clips, cast banter, behind-the-scenes material, personality content, and suggestive but non-explicit teasers.</p></article>
-        <article class="feature-block reveal"><span class="tag">EXPANSION</span><h3>A shared universe</h3><p>Guest creators, later seasons, in-person specials, side stories, lore, audience micro-decisions, live events, and merch.</p></article>
-      </div>
-    </section>
+<section class="section support">
+ <div class="section-label">05 / IF IT WORKS</div>
+ <div class="support-intro"><h2>Let the audience help make <em>the next version better.</em></h2><p>A future support-goal system could make production upgrades visible and participatory while also showing what viewers actually care about.</p></div>
+ <div class="goal-grid">
+  <article class="goal"><small>ART</small><h3>Commissioned character art</h3><svg viewBox="0 0 140 140" fill="none"><rect x="23" y="18" width="94" height="104" rx="12" stroke="white" stroke-width="5"/><circle cx="70" cy="58" r="20" stroke="white" stroke-width="4"/><path d="M41 104c9-22 19-32 29-32s20 10 29 32" stroke="white" stroke-width="4"/></svg></article>
+  <article class="goal"><small>GEAR</small><h3>Better audio & production equipment</h3><svg viewBox="0 0 140 140" fill="none"><rect x="52" y="20" width="36" height="67" rx="18" stroke="white" stroke-width="5"/><path d="M38 67c0 22 12 33 32 33s32-11 32-33M70 100v23M50 123h40" stroke="white" stroke-width="5" stroke-linecap="round"/></svg></article>
+  <article class="goal"><small>LOOK</small><h3>Costumes, props & visual upgrades</h3><svg viewBox="0 0 140 140" fill="none"><path d="M36 34 70 18l34 16-12 30v56H48V64Z" stroke="white" stroke-width="5"/><path d="M55 26c0 14 5 22 15 22s15-8 15-22" stroke="white" stroke-width="4"/></svg></article>
+  <article class="goal"><small>TABLE</small><h3>An eventual in-person special</h3><svg viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="72" rx="47" ry="28" stroke="white" stroke-width="5"/><path d="M45 92 35 122M95 92l10 30M50 50 40 26M90 50l10-24" stroke="white" stroke-width="5" stroke-linecap="round"/><circle cx="70" cy="72" r="10" stroke="white" stroke-width="4"/></svg></article>
+ </div>
+ <p class="support-rule">Project goals can fund better production. They never buy access to a performer’s boundaries.</p>
+</section>
 
-    <section class="section rose" id="table">
-      <div class="split-heading reveal"><div><p class="eyebrow">04 / THE TABLE</p><h2>Built around ensemble chemistry.</h2></div><p>The cast is not a lineup of interchangeable creators. The goal is a group viewers want to watch interact for hours — whether the scene is chaotic, emotional, strategic, or ridiculous.</p></div>
-      <div class="cast-grid">
-        <article class="cast-card reveal"><div class="portrait-placeholder"><span>?</span></div><h3>Cast reveal</h3><p>Coming later</p></article>
-        <article class="cast-card reveal"><div class="portrait-placeholder"><span>?</span></div><h3>Cast reveal</h3><p>Coming later</p></article>
-        <article class="cast-card reveal"><div class="portrait-placeholder"><span>?</span></div><h3>Cast reveal</h3><p>Coming later</p></article>
-        <article class="cast-card reveal"><div class="portrait-placeholder"><span>?</span></div><h3>Cast reveal</h3><p>Coming later</p></article>
-      </div>
-      <div class="principle reveal"><strong>Internal casting principle</strong><span>Adult content can be layered onto a strong ensemble. It cannot compensate for weak chemistry.</span></div>
-    </section>
+<section class="section faq" id="faq">
+ <div class="section-label">06 / FAQ</div>
+ <div class="faq-grid"><div class="faq-copy"><h2>The short version.</h2><p>The project is still in development. Pilot Zero exists specifically so we can learn what is actually sustainable before pretending everything is finalized.</p></div><div class="questions">
+  <details><summary>Is this really a tabletop campaign?</summary><p>Yes. The game is the backbone of the project, not set dressing.</p></details>
+  <details><summary>Is explicit content required?</summary><p>No. Different performers can participate at completely different adult-content levels.</p></details>
+  <details><summary>How long are episodes?</summary><p>The working target is roughly 25–40 minutes, cut at natural story beats rather than arbitrary timestamps.</p></details>
+  <details><summary>How often would episodes release?</summary><p>Twice weekly is the leading experiment, subject to what Pilot Zero teaches us.</p></details>
+  <details><summary>Is Pilot Zero public?</summary><p>No. Private by default.</p></details>
+ </div></div>
+</section>
+</main>
 
-    <section class="section light" id="recruitment">
-      <div class="section-heading reveal"><p class="eyebrow">05 / JOIN THE TABLE</p><h2>Interested in participating?</h2><p>Recruitment is being designed around fit, reliability, and chemistry — not around who is willing to be the most explicit or who has the largest follower count.</p></div>
-      <div class="recruit-grid">
-        <div class="recruit-card reveal"><h3>What matters</h3><ul class="check-list"><li>Reliability & follow-through</li><li>Ensemble chemistry</li><li>Communication & table etiquette</li><li>Improvisation & roleplay</li><li>Entertainment presence</li><li>Boundary clarity</li><li>Creator professionalism</li></ul></div>
-        <div class="recruit-card muted reveal"><h3>What doesn’t decide it</h3><ul class="x-list"><li>Follower count</li><li>Being the most sexually adventurous</li><li>Having years of D&D experience</li><li>Matching someone else’s boundaries</li><li>Being the loudest person in the room</li></ul></div>
-      </div>
-      <div class="timeline reveal" aria-label="Recruitment process">
-        <span>Interest</span><i>→</i><span>Brief chat</span><i>→</i><span>Video call</span><i>→</i><span>Verification / releases</span><i>→</i><span>Group chemistry</span><i>→</i><span>Pilot Zero</span>
-      </div>
-      <div class="recruit-note reveal"><p><strong>Private by default:</strong> Pilot Zero exists to test the group and the production process. It is not presumed publishable.</p><a href="#faq" class="text-link">Read the FAQ →</a></div>
-    </section>
-
-    <section class="section dark-band support">
-      <div class="split-heading reveal"><div><p class="eyebrow">06 / FUTURE SUPPORT MODEL</p><h2>Let the audience help build the show.</h2></div><p>One planned idea is project-specific support goals that make growth visible while also showing what viewers actually care about. This is a concept only — nothing is currently being collected.</p></div>
-      <div class="goal-grid">
-        <div class="goal reveal"><span>01</span><h3>Character art</h3><p>Commissioned portraits and visual identity.</p></div>
-        <div class="goal reveal"><span>02</span><h3>Production upgrades</h3><p>Better microphones, lighting, or recording equipment.</p></div>
-        <div class="goal reveal"><span>03</span><h3>Costumes & props</h3><p>Presentation upgrades tied to the world and characters.</p></div>
-        <div class="goal reveal"><span>04</span><h3>In-person special</h3><p>Travel and production costs for a shared-table event.</p></div>
-      </div>
-      <p class="boundary-note reveal">Support goals improve or expand the project. They do not buy access to a performer’s sexual boundaries.</p>
-    </section>
-
-    <section class="section light boundaries">
-      <div class="section-heading reveal"><p class="eyebrow">07 / BOUNDARIES</p><h2>Specific beats vague.</h2><p>“I’m okay with adult content” is not enough information for production. Dice & Desire is being designed around granular, collaborator-aware boundaries that can differ from person to person.</p></div>
-      <div class="boundary-list reveal"><span>Wardrobe / nudity</span><span>Verbal sexual roleplay</span><span>Character romance</span><span>Performer flirting</span><span>Bonus collaborations</span><span>Promotional images</span><span>Thumbnails / clips</span><span>Audience interaction</span></div>
-      <div class="callout reveal"><strong>Operating principle</strong><p>Consent for future production is specific and revisable. Publication and continued-use rights for already-recorded material are handled separately and explicitly.</p></div>
-    </section>
-
-    <section class="section faq" id="faq">
-      <div class="section-heading reveal"><p class="eyebrow">08 / FAQ</p><h2>The short version.</h2></div>
-      <div class="accordion reveal">
-        <details><summary>Is this actually a tabletop campaign?</summary><p>Yes. The game is not a prop. Story, characters, improvisation, consequences, combat, exploration, and cast chemistry are the foundation of the project.</p></details>
-        <details><summary>Is explicit content required?</summary><p>No. Adult participation is performer-specific, and different people can have different content ceilings without weakening the ensemble.</p></details>
-        <details><summary>Is the game system finalized?</summary><p>Not publicly locked yet. The current direction favors an original setting and original story while the exact tabletop rules approach is still being finalized.</p></details>
-        <details><summary>How long are episodes?</summary><p>The current working target is roughly 25–40 minutes, with episodes ending on natural narrative beats rather than arbitrary timestamps.</p></details>
-        <details><summary>How often would episodes release?</summary><p>Twice weekly is the current experiment being considered. Pilot Zero will determine whether that cadence is actually sustainable.</p></details>
-        <details><summary>Is casting open?</summary><p>The project is still in development and the interest process is being designed. Recruitment will prioritize reliability, chemistry, communication, roleplay, boundary clarity, and creator professionalism.</p></details>
-        <details><summary>Is Pilot Zero public?</summary><p>No. It is private by default and exists to test chemistry, comfort, production quality, pacing, and editing workload before any launch decision.</p></details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div><strong>DICE & DESIRE</strong><span>Role Play After Dark</span></div>
-    <p>18+ adult-themed entertainment project · In development</p>
-    <a href="#top">Back to top ↑</a>
-  </footer>
-
-  <script src="app.js"></script>
+<footer><div class="footerbrand"><b>DICE & DESIRE</b><span>Role Play After Dark</span></div><div>18+ adult-themed entertainment project · In development</div><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
