@@ -1,12 +1,32 @@
-# Dice & Desire — Role Play After Dark
+# Dice & Desire — GitHub Pages Site
 
-A self-contained static GitHub Pages site. The site uses one `index.html` with embedded CSS and SVG artwork, so there are no external image/font dependencies and no asset-path failures when previewed or hosted under a repository subpath.
+Static, dependency-free website for **Dice & Desire — Role Play After Dark**.
 
-## GitHub Pages
-1. Create a public repository, e.g. `Dice-and-Desire`.
-2. Upload `index.html`, `.nojekyll`, and `.github/workflows/deploy-pages.yml`.
-3. In GitHub: **Settings → Pages → Source → GitHub Actions**.
-4. Push to `main`. The workflow deploys the repository root.
+## Publish with GitHub Pages
+
+1. Create a GitHub repository (for example `dice-and-desire`).
+2. Upload this repository's files to the repository root.
+3. In GitHub, open **Settings → Pages**.
+4. Under **Build and deployment**, choose **GitHub Actions**.
+5. The included workflow will deploy the static site automatically on pushes to `main`.
 
 ## Local preview
-Open `index.html` directly, or run any static web server from this folder.
+
+You can open `index.html` directly, or run any simple local web server, for example:
+
+```bash
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080`.
+
+## Custom domain
+
+Once a domain is chosen, add it under **Settings → Pages → Custom domain**. GitHub can create/manage the `CNAME` entry in the repository once configured.
+
+## Site structure
+
+- `index.html` — complete public site
+- `assets/` — brand assets, mood stills, and embedded project overview video
+- `.github/workflows/deploy-pages.yml` — GitHub Pages deployment
+- `.nojekyll` — prevents Jekyll processing
